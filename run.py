@@ -89,7 +89,7 @@ class Runner(object):
             train_loss = train_loss / len(train_loader)
 
             f1, dev_loss, _ = self.eval_tool.evaluate(self.model, dev_loader)
-            print('[%03d] train_loss: %.3f | dev_loss: %.3f | f1 on dev: %.4f'
+            print('[%03d] train_loss: %.3f | dev_loss: %.3f | micro f1 on dev: %.4f'
                   % (epoch, train_loss, dev_loss, f1), end=' ')
             if f1 > max_f1:
                 max_f1 = f1
@@ -121,7 +121,7 @@ class Runner(object):
         print('start test ...')
         _, _, test_loader = self.loader
         f1, test_loss, predict_label = self.eval_tool.evaluate(self.model, test_loader)
-        print('test_loss: %.3f | f1 on test: %.3f' % (test_loss, f1))
+        print('test_loss: %.3f | micro f1 on test:  %.4f' % (test_loss, f1))
         return predict_label
 
 

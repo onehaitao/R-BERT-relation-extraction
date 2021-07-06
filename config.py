@@ -49,7 +49,7 @@ class Config(object):
         # several key selective parameters
         parser.add_argument('--data_dir',
                             type=str,
-                            default='./data',
+                            default='./resource/data',
                             help='dir to load data')
         parser.add_argument('--output_dir',
                             type=str,

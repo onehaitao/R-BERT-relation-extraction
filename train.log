@@ -1,0 +1,53 @@
+--------------------------------------
+some config:
+data_dir = ./resource/data
+output_dir = ./output
+cache_dir = ./cache
+model_name = R-BERT
+mode = 0
+seed = 1234
+cuda = 0
+plm_root_dir = ./resource
+plm_name = bert-base-uncased
+epoch = 5
+max_len = 128
+batch_size = 16
+lr = 2e-05
+other_lr = 2e-05
+weight_decay = 0.0
+adam_epsilon = 1e-08
+gradient_accumulation_steps = 1
+warmup_proportion = 0.1
+max_grad_norm = 1.0
+dropout = 0.1
+device = cuda:0
+model_dir = ./output/R-BERT
+plm_dir = ./resource/bert-base-uncased
+--------------------------------------
+start to load data ...
+get the result of tokenization from ./resource/data/train.json
+get the result of tokenization from ./resource/data/test.json
+finish loading train!
+finish loading dev!
+finish loading test!
+finish!
+--------------------------------------
+traning model parameters (except PLM layers):
+cls_mlp.weight :  torch.Size([768, 768])
+cls_mlp.bias :  torch.Size([768])
+entity_mlp.weight :  torch.Size([768, 768])
+entity_mlp.bias :  torch.Size([768])
+dense.weight :  torch.Size([19, 2304])
+dense.bias :  torch.Size([19])
+--------------------------------------
+start to train the model ...
+[001] train_loss: 1.672 | dev_loss: 0.605 | micro f1 on dev: 0.8458 >>> save models!
+[002] train_loss: 0.509 | dev_loss: 0.510 | micro f1 on dev: 0.8737 >>> save models!
+[003] train_loss: 0.260 | dev_loss: 0.568 | micro f1 on dev: 0.8747 >>> save models!
+[004] train_loss: 0.135 | dev_loss: 0.592 | micro f1 on dev: 0.8868 >>> save models!
+[005] train_loss: 0.071 | dev_loss: 0.624 | micro f1 on dev: 0.8906 >>> save models!
+--------------------------------------
+start load model ...
+--------------------------------------
+start test ...
+test_loss: 0.624 | micro f1 on test:  0.8906
