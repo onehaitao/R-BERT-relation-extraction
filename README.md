@@ -21,13 +21,17 @@ Implementation of [Enriching Pre-trained Language Model Entity Information for R
 1. Download the pre-trained BERT model and put it into the `resource` folder.
 2. Run the following the commands to start the program.
 ```shell
-python run.py
+python run.py \
+    --batch_size=16 \
+    --max_len=128 \
+    --lr=2e-5 \
+    --epoch=5 \
+    --dropout=0.1
 ```
 More details can be seen by `python run.py -h`.
 
-3. You can use the official scorer to check the final predicted result.
+3. You can use the official scorer to check the final predicted result (in `eval` folder).
 ```shell
-cd eval
 perl semeval2010_task8_scorer-v1.2.pl proposed_answer.txt predicted_result.txt >> result.txt
 ```
 
