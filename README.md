@@ -30,7 +30,7 @@ python run.py \
 ```
 More details can be seen by `python run.py -h`.
 
-3. You can use the official scorer to check the final predicted result (in `eval` folder).
+3. You can use the official scorer to check the final predicted result (in the `eval` folder).
 ```shell
 perl semeval2010_task8_scorer-v1.2.pl proposed_answer.txt predicted_result.txt >> result.txt
 ```
